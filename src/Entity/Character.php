@@ -8,6 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=CharacterRepository::class)
+ * @ORM\Table(name="`character`")
  * @ApiResource(
  *     itemOperations={"GET"},
  *     collectionOperations={"GET"},
@@ -46,6 +47,21 @@ class Character
      * @ORM\Column(type="text")
      */
     private $description;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $genre;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $death;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $blood;
 
     public function getId(): ?int
     {
@@ -108,6 +124,42 @@ class Character
     public function setDescription(?string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function getGenre(): ?string
+    {
+        return $this->genre;
+    }
+
+    public function setGenre(string $genre): self
+    {
+        $this->genre = $genre;
+
+        return $this;
+    }
+
+    public function getDeath(): ?\DateTimeInterface
+    {
+        return $this->death;
+    }
+
+    public function setDeath(?\DateTimeInterface $death): self
+    {
+        $this->death = $death;
+
+        return $this;
+    }
+
+    public function getBlood(): ?string
+    {
+        return $this->blood;
+    }
+
+    public function setBlood(string $blood): self
+    {
+        $this->blood = $blood;
 
         return $this;
     }
