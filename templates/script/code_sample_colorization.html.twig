@@ -1,51 +1,11 @@
+{% include 'script/include/code_sample_methods.html.twig' %}
+
 <script>
-    const syntaxHighlight = (json) => {
-        if (typeof json != 'string') {
-            json = JSON.stringify(json, undefined, 2);
-        }
-        json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-        return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
-            var cls = 'number';
-            if (/^"/.test(match)) {
-                if (/:$/.test(match)) {
-                    cls = 'key';
-                } else {
-                    cls = 'string';
-                }
-            } else if (/true|false/.test(match)) {
-                cls = 'boolean';
-            } else if (/null/.test(match)) {
-                cls = 'null';
-            }
-            return '<span class="' + cls + '">' + match + '</span>';
-        });
-    }
-
-    const handleSyntax = () => {
-        const code = document.getElementById('code-sample');
-        code.innerHTML = syntaxHighlight(code.innerHTML)
-    }
-
-    const getCode = async (route) => {
-        const code = document.getElementById('code-sample');
-
-        const req = await fetch('https://127.0.0.1:8000/api/' + route)
-        if (req.status === 200) {
-            const resp = await req.json()
-            code.innerHTML = JSON.stringify(resp, null, 2)
-        } else {
-            code.innerHTML = 'La route spécifiée n\'existe pas.'
-        }
-    }
-
-    const search = (route = 'characters?firstName=Harry') => {
-        getCode(route).then(handleSyntax)
-    }
-
-    search()
+    const code = document.getElementById('code-sample');
+    search('characters?firstName=Harry', code)
 
     document.getElementById('search-btn').addEventListener('click', () => {
         document.getElementById('code-sample').innerHTML = '<div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center"><div class="lds-ring"><div></div><div></div><div></div><div></div></div></div>'
-        search(document.getElementById('route-input').value)
+        search(document.getElementById('route-input').value, code)
     })
 </script>

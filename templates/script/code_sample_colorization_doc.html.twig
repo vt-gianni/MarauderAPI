@@ -1,44 +1,6 @@
+{% include 'script/include/code_sample_methods.html.twig' %}
+
 <script>
-    const syntaxHighlight = (json) => {
-        if (typeof json != 'string') {
-            json = JSON.stringify(json, undefined, 2);
-        }
-        json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-        return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
-            var cls = 'number';
-            if (/^"/.test(match)) {
-                if (/:$/.test(match)) {
-                    cls = 'key';
-                } else {
-                    cls = 'string';
-                }
-            } else if (/true|false/.test(match)) {
-                cls = 'boolean';
-            } else if (/null/.test(match)) {
-                cls = 'null';
-            }
-            return '<span class="' + cls + '">' + match + '</span>';
-        });
-    }
-
-    const handleSyntax = (sample) => {
-        sample.innerHTML = syntaxHighlight(sample.innerHTML)
-    }
-
-    const getCode = async (route, sample) => {
-        const req = await fetch('https://127.0.0.1:8000/api/' + route)
-        if (req.status === 200) {
-            const resp = await req.json()
-            sample.innerHTML = JSON.stringify(resp, null, 2)
-        } else {
-            sample.innerHTML = 'La route spécifiée n\'existe pas.'
-        }
-    }
-
-    const search = (route, sample) => {
-        getCode(route, sample).then(() => handleSyntax(sample))
-    }
-
     Array.from(document.getElementsByClassName('doc-sample')).forEach(sample => {
         search(sample.id.split('doc-')[1], sample)
     })
