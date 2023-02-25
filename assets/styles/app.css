@@ -84,6 +84,10 @@ nav {
     height: 50px;
 }
 
+nav img {
+    height: 30px;
+}
+
 nav a {
     color: #E2E9E9;
     text-decoration: none;
@@ -170,6 +174,10 @@ nav ul li a {
 .row-align-center {
     display: flex;
     align-items: center;
+}
+
+.between {
+    justify-content: space-between;
 }
 
 .text-underline {
@@ -273,6 +281,23 @@ pre .key { color: #9A8A67; }
 
 .mini {
     font-size: 16px !important;
+}
+
+footer {
+    background-color: #B7CBCB;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+footer a {
+    color: #576F72;
+    text-decoration: none;
+}
+
+footer i {
+    font-size: 24px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 @media (max-width: 1250px) {

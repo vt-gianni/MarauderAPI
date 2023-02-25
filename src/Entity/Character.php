@@ -66,6 +66,11 @@ class Character
      */
     private $blood;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $house;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -163,6 +168,18 @@ class Character
     public function setBlood(string $blood): self
     {
         $this->blood = $blood;
+
+        return $this;
+    }
+
+    public function getHouse(): ?string
+    {
+        return $this->house;
+    }
+
+    public function setHouse(?string $house): self
+    {
+        $this->house = $house;
 
         return $this;
     }
