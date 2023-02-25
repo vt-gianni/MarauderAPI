@@ -4,8 +4,9 @@
     <h1 class="padding handwriting">Carte du Marauder</h1>
 
     <p>L'API REST sur le monde de Harry Potter.</p>
+    <p class="mini mt-1">Je jure solennellement que mes intentions sont mauvaises.</p>
 
-    <div class="padding"><a href="">Voir la documentation</a></div>
+    <div class="padding"><a href="{{ path('index_doc') }}">Voir la documentation</a></div>
 {% endblock %}
 
 {% block body %}
@@ -14,14 +15,14 @@
     </h2>
 
     <div class="flex-row">
-        <div class="light-background little-padding text-underline bordered">
+        <div class="light-background little-padding text-underline bordered radius-left">
             https://marauderapi.fr/api/
         </div>
         <input type="text" name="action" class="no-border-left w-100" value="characters?firstName=Harry" id="route-input">
-        <button class="validation-btn" id="search-btn">Valider</button>
+        <button class="validation-btn radius-right" id="search-btn">Valider</button>
     </div>
 
-    <div class="light-background padding mt-3 code-sample">
+    <div class="light-background radius padding mt-3 code-sample">
         <pre class="line-numbers"><code class="language-json" id="code-sample"></code></pre>
     </div>
 {% endblock %}

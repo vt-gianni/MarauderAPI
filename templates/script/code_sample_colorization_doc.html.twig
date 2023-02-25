@@ -21,31 +21,25 @@
         });
     }
 
-    const handleSyntax = () => {
-        const code = document.getElementById('code-sample');
-        code.innerHTML = syntaxHighlight(code.innerHTML)
+    const handleSyntax = (sample) => {
+        sample.innerHTML = syntaxHighlight(sample.innerHTML)
     }
 
-    const getCode = async (route) => {
-        const code = document.getElementById('code-sample');
-
+    const getCode = async (route, sample) => {
         const req = await fetch('https://127.0.0.1:8000/api/' + route)
         if (req.status === 200) {
             const resp = await req.json()
-            code.innerHTML = JSON.stringify(resp, null, 2)
+            sample.innerHTML = JSON.stringify(resp, null, 2)
         } else {
-            code.innerHTML = 'La route spécifiée n\'existe pas.'
+            sample.innerHTML = 'La route spécifiée n\'existe pas.'
         }
     }
 
-    const search = (route = 'characters?firstName=Harry') => {
-        getCode(route).then(handleSyntax)
+    const search = (route, sample) => {
+        getCode(route, sample).then(() => handleSyntax(sample))
     }
 
-    search()
-
-    document.getElementById('search-btn').addEventListener('click', () => {
-        document.getElementById('code-sample').innerHTML = '<div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center"><div class="lds-ring"><div></div><div></div><div></div><div></div></div></div>'
-        search(document.getElementById('route-input').value)
+    Array.from(document.getElementsByClassName('doc-sample')).forEach(sample => {
+        search(sample.id.split('doc-')[1], sample)
     })
 </script>

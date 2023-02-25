@@ -1,0 +1,118 @@
+{% extends 'base.html.twig' %}
+
+{% block jumbotron %}
+    <h1 class="padding handwriting">Documentation</h1>
+
+    <p>L'API REST sur le monde de Harry Potter.</p>
+    <p class="mini mt-1 mb-3">Je jure solennellement que mes intentions sont mauvaises.</p>
+{% endblock %}
+
+{% block body %}
+    <div class="padding-vertical bordered-bottom">
+        <h2 class="padding-vertical">
+            Personnages
+        </h2>
+
+        <p class="doc-description italic">
+            Ces routes vous permettront de récupérer les informations principales des personnages des films et livres Harry Potter.
+        </p>
+    </div>
+
+    <h3 class="mt-3">Tous les personnages</h3>
+
+    <div class="doc-endpoint padding-vertical">
+        <div class="row-align-center">
+            <div class="doc-badge mr-1">GET</div> https://marauderapi.fr/api/characters
+        </div>
+
+        <div class="light-background padding radius mt-3 code-sample">
+            <pre class="line-numbers"><code class="language-json doc-sample" id="doc-characters"></code></pre>
+        </div>
+    </div>
+
+    <h3 class="mt-3">Personnage par ID</h3>
+
+    <div class="doc-endpoint padding-vertical">
+        <div class="row-align-center">
+            <div class="doc-badge mr-1">GET</div> https://marauderapi.fr/api/characters/5
+        </div>
+
+        <div class="light-background padding radius mt-3 code-sample">
+            <pre class="line-numbers"><code class="language-json doc-sample" id="doc-characters/5"></code></pre>
+        </div>
+    </div>
+
+    <h3 class="mt-3">Personnages par Filtres</h3>
+
+    <div class="doc-description italic mt-3 bordered padding radius">
+        <i class="fas fa-question-circle"></i> Il existe différents filtres <span class="fw-bold green">cumulables</span> permettant de préciser vos recherches :
+        <ul class="mt-1 ml-3">
+            <li><span class="fw-bold gold">firstName :</span> Filtre par prénom, recherche partielle.</li>
+            <li><span class="fw-bold gold">lastName :</span> Filtre par nom, recherche partielle.</li>
+            <li>
+                <span class="fw-bold gold">blood :</span> Filtre par sang, recherche précise :
+                <ul class="ml-3">
+                    <li>Né-Moldue</li>
+                    <li>Née-Moldue</li>
+                    <li>Sang-Pur</li>
+                    <li>Sang-Mêlé</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="doc-endpoint padding-vertical">
+        <div class="row-align-center">
+            <div class="doc-badge mr-1">GET</div> https://marauderapi.fr/api/characters?firstName=H
+        </div>
+
+        <div class="light-background padding radius mt-3 code-sample">
+            <pre class="line-numbers"><code class="language-json doc-sample" id="doc-characters?firstName=H"></code></pre>
+        </div>
+    </div>
+
+    <div class="doc-endpoint padding-vertical">
+        <div class="row-align-center">
+            <div class="doc-badge mr-1">GET</div> https://marauderapi.fr/api/characters?firstName=H&lastName=G
+        </div>
+
+        <div class="light-background padding radius mt-3 code-sample">
+            <pre class="line-numbers"><code class="language-json doc-sample" id="doc-characters?firstName=H&lastName=G"></code></pre>
+        </div>
+    </div>
+
+
+    <div class="padding-vertical bordered-bottom">
+        <h2 class="padding-vertical">
+            Sortilèges
+        </h2>
+
+        <p class="doc-description italic">
+            Ces routes vous permettront de récupérer les informations principales des sortilèges des films et livres Harry Potter.
+        </p>
+    </div>
+
+    <div class="padding-vertical bordered-bottom">
+        <h2 class="padding-vertical">
+            Créatures Magiques
+        </h2>
+
+        <p class="doc-description italic">
+            Ces routes vous permettront de récupérer les informations principales des créatures magiques des films et livres Harry Potter.
+        </p>
+    </div>
+
+    <div class="padding-vertical bordered-bottom">
+        <h2 class="padding-vertical">
+            Lieux
+        </h2>
+
+        <p class="doc-description italic">
+            Ces routes vous permettront de récupérer les informations principales des lieux des films et livres Harry Potter.
+        </p>
+    </div>
+{% endblock %}
+
+{% block js %}
+    {% include 'script/code_sample_colorization_doc.html.twig' %}
+{% endblock %}

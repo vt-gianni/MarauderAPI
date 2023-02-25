@@ -64,8 +64,16 @@ body {
     font-family: 'Dancing Script', cursive;
 }
 
-a {
+a, .red {
     color: #BA918D;
+}
+
+.gold {
+    color: #9A8A67;
+}
+
+.green {
+    color: #576F72;
 }
 
 nav {
@@ -74,6 +82,11 @@ nav {
     justify-content: space-between;
     align-items: center;
     height: 50px;
+}
+
+nav a {
+    color: #E2E9E9;
+    text-decoration: none;
 }
 
 nav p {
@@ -105,17 +118,21 @@ nav p .fa-bolt {
     padding: 10px;
 }
 
-ul {
+.padding-vertical {
+    padding: 20px 0;
+}
+
+nav ul {
     list-style: none;
     display: flex;
 }
 
-ul li {
+nav ul li {
     margin-left: 10px;
     margin-right: 10px;
 }
 
-ul li a {
+nav ul li a {
     color: #E2E9E9;
     text-decoration: none;
 }
@@ -128,10 +145,14 @@ ul li a {
     text-align: center;
 }
 
+.italic {
+    font-style: italic;
+}
+
 .jumbotron h1 {
     margin-bottom: 30px;
     font-size: 50px;
-    color: #9A8A66;
+    color: #576F72;
 }
 
 .jumbotron p {
@@ -144,6 +165,11 @@ ul li a {
 
 .flex-row {
     display: flex;
+}
+
+.row-align-center {
+    display: flex;
+    align-items: center;
 }
 
 .text-underline {
@@ -159,6 +185,24 @@ input {
 
 .bordered {
     border: 1px solid #576F72;
+}
+
+.bordered-bottom {
+    border-bottom: 1px solid #576F72;
+}
+
+.radius {
+    border-radius: 5px;
+}
+
+.radius-left {
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.radius-right {
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 .no-border-left {
@@ -182,9 +226,31 @@ input {
     margin-top: 30px;
 }
 
+.mt-1 {
+    margin-top: 10px;
+}
+
+.mb-3 {
+    margin-bottom: 30px;
+}
+
+.mr-1 {
+    margin-right: 10px;
+}
+
+.ml-3 {
+    margin-left: 30px;
+}
+
+.fw-bold {
+    font-weight: bold;
+}
+
 .code-sample {
     overflow-x: scroll;
     font-size: 16px;
+    max-height: 400px;
+    overflow-y: scroll;
 }
 
 pre .string { color: #3F5B5E; }
@@ -192,6 +258,22 @@ pre .number { color: #9A6A67; }
 pre .boolean { color: #7E8F60; }
 pre .null { color: #343434; }
 pre .key { color: #9A8A67; }
+
+.doc-badge {
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #BA918D;
+    color: #FCFDFD;
+    width: 50px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mini {
+    font-size: 16px !important;
+}
 
 @media (max-width: 1250px) {
     .container {
