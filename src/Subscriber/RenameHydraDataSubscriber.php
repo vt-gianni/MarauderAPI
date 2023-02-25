@@ -9,22 +9,20 @@ use Symfony\Component\HttpKernel\KernelEvents;
 
 class RenameHydraDataSubscriber implements EventSubscriberInterface
 {
+    const KEYS_TO_REMOVE = [
+        '@context', '@id', '@type', 'hydra:search'
+    ];
+
     public function updateData(ViewEvent $event)
     {
         $result = $event->getControllerResult();
 
         $data = json_decode($result, true);
 
-        if (isset($data['@context'])) {
-            unset($data['@context']);
-        }
-
-        if (isset($data['@id'])) {
-            unset($data['@id']);
-        }
-
-        if (isset($data['@type'])) {
-            unset($data['@type']);
+        foreach (self::KEYS_TO_REMOVE as $key) {
+            if (isset($data[$key])) {
+                unset($data[$key]);
+            }
         }
 
         if (isset($data['hydra:member'])) {
@@ -44,10 +42,6 @@ class RenameHydraDataSubscriber implements EventSubscriberInterface
                 $data['nextPage'] = $data['hydra:view']['hydra:next'];
             }
             unset($data['hydra:view']);
-        }
-
-        if (isset($data['hydra:search'])) {
-            unset($data['hydra:search']);
         }
 
 
