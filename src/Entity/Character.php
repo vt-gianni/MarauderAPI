@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiFilter;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\CharacterRepository;
 use Doctrine\ORM\Mapping as ORM;
@@ -13,6 +15,7 @@ use Doctrine\ORM\Mapping as ORM;
  *     itemOperations={"GET"},
  *     collectionOperations={"GET"},
  * )
+ * @ApiFilter(SearchFilter::class, properties={"firstName":"partial", "lastName": "partial", "blood"})
  */
 class Character
 {

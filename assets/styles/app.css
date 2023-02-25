@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #FCFDFD;
+    color: #343434;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.light-background {
+    background-color: #E2E9E9;
+}
+
+.dark-background {
+    background-color: #576F72;
+}
+
+a {
+    color: #BA918D;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+}
+
+nav p {
+    color: #E2E9E9;
+    font-weight: bold;
+}
+
+.container {
+    width: 1200px;
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.padding {
+    padding: 20px;
+}
+
+.little-padding {
+    padding: 10px;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+}
+
+ul li {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+ul li a {
+    color: #E2E9E9;
+    text-decoration: none;
+}
+
+.jumbotron {
+    background-color: #E2E9E9;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.jumbotron h1 {
+    margin-bottom: 30px;
+}
+
+.jumbotron p {
+    font-size: 24px;
+}
+
+.fa-bolt {
+    color: #BAAC8D;
+}
+
+.flex-row {
+    display: flex;
+}
+
+.text-underline {
+    text-decoration: underline;
+}
+
+input {
+    font-size: 20px;
+    padding: 10px;
+    color: #343434;
+    border: 1px solid #576F72;
+}
+
+.bordered {
+    border: 1px solid #576F72;
+}
+
+.no-border-left {
+    border-left: 0 !important;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.validation-btn {
+    background-color: #576F72;
+    font-size: 20px;
+    color: #FCFDFD;
+    border: 1px solid #576F72;
+    padding: 10px;
+}
+
+.mt-3 {
+    margin-top: 30px;
+}
+
+.code-sample {
+    overflow-x: scroll;
+}
+
+pre .string { color: #3F5B5E; }
+pre .number { color: #9A6A67; }
+pre .boolean { color: #7E8F60; }
+pre .null { color: #343434; }
+pre .key { color: #9A8A67; }
+
+@media (max-width: 1250px) {
+    .container {
+        width: 1000px;
+    }
+}
+
+@media (max-width: 1050px) {
+    .container {
+        width: 800px;
+    }
+}
+
+@media (max-width: 850px) {
+    .container {
+        width: 600px;
+    }
+}
+
+@media (max-width: 650px) {
+    .container {
+        width: 95%;
+    }
+}
