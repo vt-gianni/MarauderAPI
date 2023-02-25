@@ -29,7 +29,8 @@
         "symfony/twig-bundle": "5.4.*",
         "symfony/validator": "5.4.*",
         "symfony/webpack-encore-bundle": "^1.16",
-        "symfony/yaml": "5.4.*"
+        "symfony/yaml": "5.4.*",
+        "ext-json": "*"
     },
     "config": {
         "allow-plugins": {
@@ -81,5 +82,11 @@
     },
     "require-dev": {
         "symfony/maker-bundle": "^v1.40.0"
+    },
+    "repositories": {
+        "packagist.org": {
+            "type": "composer",
+            "url": "https://packagist.org"
+        }
     }
 }

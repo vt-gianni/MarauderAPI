@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block jumbotron %}
-    <h1 class="padding">MarauderAPI</h1>
+    <h1 class="padding handwriting">Carte du Marauder</h1>
 
     <p>L'API REST sur le monde de Harry Potter.</p>
 
@@ -17,67 +17,12 @@
         <div class="light-background little-padding text-underline bordered">
             https://marauderapi.fr/api/
         </div>
-        <input type="text" name="action" class="no-border-left w-100" value="characters?firstName=Harry">
-        <button class="validation-btn">Valider</button>
+        <input type="text" name="action" class="no-border-left w-100" value="characters?firstName=Harry" id="route-input">
+        <button class="validation-btn" id="search-btn">Valider</button>
     </div>
 
     <div class="light-background padding mt-3 code-sample">
-        <pre class="line-numbers"><code class="language-json" id="code-sample">{
-    "@context": "/api/contexts/Character",
-    "@id": "/api/characters",
-    "@type": "hydra:Collection",
-    "hydra:member": [
-        {
-            "@id": "/api/characters/1",
-            "@type": "Character",
-            "id": 1,
-            "firstName": "Harry",
-            "lastName": "Potter",
-            "picture": "harry-potter.jpg",
-            "birthdate": "1980-07-31T00:00:00+02:00",
-            "description": "Harry James Potter est né le 31 juillet 1980. Il est le fils unique de James Potter et Lily Evans. Il est aussi le seul être humain connu pour avoir survécu au sortilège de la Mort, jeté par Voldemort. De cette tentative de meurtre est restée gravée sur son front une cicatrice en forme d'éclair.",
-            "genre": "Homme",
-            "death": null,
-            "blood": "Sang-Mêlé"
-        }
-    ],
-    "hydra:totalItems": 1,
-    "hydra:view": {
-        "@id": "/api/characters?firstName=harry",
-        "@type": "hydra:PartialCollectionView"
-    },
-    "hydra:search": {
-        "@type": "hydra:IriTemplate",
-        "hydra:template": "/api/characters{?firstName,lastName,blood,blood[]}",
-        "hydra:variableRepresentation": "BasicRepresentation",
-        "hydra:mapping": [
-            {
-                "@type": "IriTemplateMapping",
-                "variable": "firstName",
-                "property": "firstName",
-                "required": false
-            },
-            {
-                "@type": "IriTemplateMapping",
-                "variable": "lastName",
-                "property": "lastName",
-                "required": false
-            },
-            {
-                "@type": "IriTemplateMapping",
-                "variable": "blood",
-                "property": "blood",
-                "required": false
-            },
-            {
-                "@type": "IriTemplateMapping",
-                "variable": "blood[]",
-                "property": "blood",
-                "required": false
-            }
-        ]
-    }
-}</code></pre>
+        <pre class="line-numbers"><code class="language-json" id="code-sample"></code></pre>
     </div>
 {% endblock %}
 
