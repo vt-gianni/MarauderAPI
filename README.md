@@ -16,6 +16,8 @@
 
 <h3 align="center">Carte du Maraudeur</h3>
 
+ <a href="https://marauderapi.fr/documentation">Documentation</a>
+
   <p align="center">
     Carte du Maraudeur est une API sur le monde de Harry Potter.
     <br />
