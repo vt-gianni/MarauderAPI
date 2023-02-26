@@ -44,8 +44,6 @@ Gianni GIUDICE - [@GGianniDev](https://twitter.com/GGianniDev) - gg@vitalytech.c
 
 Lien du projet : [https://github.com/vt-gianni/MarauderAPI](https://github.com/vt-gianni/MarauderAPI/)
 
-<p align="right">(<a href="#top">Retourner en haut</a>)</p>
-
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
