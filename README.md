@@ -22,11 +22,11 @@
     Carte du Maraudeur est une API sur le monde de Harry Potter.
     <br />
     <br />
-    <a href="https://github.com/vt-gianni/PingContest">Démo</a>
+    <a href="https://marauderapi.fr">Démo</a>
     ·
-    <a href="https://github.com/vt-gianni/PingContest/issues">Rapporter un bug</a>
+    <a href="https://github.com/vt-gianni/MarauderAPI/issues">Rapporter un bug</a>
     ·
-    <a href="https://github.com/vt-gianni/PingContest/issues">Demande de feature</a>
+    <a href="https://github.com/vt-gianni/MarauderAPI/issues">Demande de feature</a>
   </p>
 </div>
 
@@ -42,7 +42,7 @@ Les données disponibles sont les Personnages, les Sortilèges, les Créatures M
 
 Gianni GIUDICE - [@GGianniDev](https://twitter.com/GGianniDev) - gg@vitalytech.com
 
-Lien du projet : [https://github.com/vt-gianni/MarauderAPI](https://github.com/vt-gianni/MarauderAPI/)
+Lien du projet : [https://marauderapi.fr](https://marauderapi.fr)
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
