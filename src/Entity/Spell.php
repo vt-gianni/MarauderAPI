@@ -2,12 +2,18 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiFilter;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\SpellRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ApiResource()
+ * @ApiResource(
+ *     itemOperations={"GET"},
+ *     collectionOperations={"GET"},
+ * )
+ * @ApiFilter(SearchFilter::class, properties={"name":"partial", "type"})
  * @ORM\Entity(repositoryClass=SpellRepository::class)
  */
 class Spell
