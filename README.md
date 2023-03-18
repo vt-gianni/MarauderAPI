@@ -19,7 +19,7 @@
  <a href="https://marauderapi.fr/documentation">Documentation</a>
 
   <p align="center">
-    Carte du Maraudeur est une API sur le monde de Harry Potter.
+    Carte du Maraudeur est une API sur l'univers de Harry Potter.
     <br />
     <br />
     <a href="https://marauderapi.fr">Démo</a>
