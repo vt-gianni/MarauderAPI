@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
  *     itemOperations={"GET"},
  *     collectionOperations={"GET"},
  * )
- * @ApiFilter(SearchFilter::class, properties={"name":"partial", "type"})
+ * @ApiFilter(SearchFilter::class, properties={"name":"partial"})
  * @ORM\Entity(repositoryClass=SpellRepository::class)
  */
 class Spell
@@ -34,11 +34,6 @@ class Spell
      * @ORM\Column(type="text")
      */
     private $description;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $type;
 
     public function getId(): ?int
     {
@@ -65,18 +60,6 @@ class Spell
     public function setDescription(string $description): self
     {
         $this->description = $description;
-
-        return $this;
-    }
-
-    public function getType(): ?string
-    {
-        return $this->type;
-    }
-
-    public function setType(string $type): self
-    {
-        $this->type = $type;
 
         return $this;
     }

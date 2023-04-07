@@ -114,6 +114,10 @@ nav p .fa-bolt {
     padding-bottom: 20px;
 }
 
+.container.min-height {
+    min-height: 500px;
+}
+
 .padding {
     padding: 20px;
 }
@@ -321,5 +325,26 @@ footer i {
 @media (max-width: 650px) {
     .container {
         width: 95%;
+    }
+
+    .no-mobile {
+        display: none;
+    }
+
+    footer > div > p {
+        display: none;
+    }
+
+    footer > .container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .jumbotron h1 {
+        font-size: 34px;
+    }
+
+    .jumbotron p {
+        font-size: 20px;
     }
 }

@@ -15,7 +15,7 @@ use Doctrine\ORM\Mapping as ORM;
  *     itemOperations={"GET"},
  *     collectionOperations={"GET"},
  * )
- * @ApiFilter(SearchFilter::class, properties={"firstName":"partial", "lastName": "partial", "blood"})
+ * @ApiFilter(SearchFilter::class, properties={"firstName":"partial", "lastName": "partial", "genre", "blood", "house"})
  */
 class Character
 {
@@ -42,24 +42,14 @@ class Character
     private $picture;
 
     /**
-     * @ORM\Column(type="datetime", nullable=true)
+     * @ORM\Column(type="date", nullable=true)
      */
     private $birthdate;
-
-    /**
-     * @ORM\Column(type="text")
-     */
-    private $description;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $genre;
-
-    /**
-     * @ORM\Column(type="datetime", nullable=true)
-     */
-    private $death;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -70,6 +60,11 @@ class Character
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $house;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $alive;
 
     public function getId(): ?int
     {
@@ -93,7 +88,7 @@ class Character
         return $this->lastName;
     }
 
-    public function setLastName(string $lastName): self
+    public function setLastName(?string $lastName): self
     {
         $this->lastName = $lastName;
 
@@ -124,18 +119,6 @@ class Character
         return $this;
     }
 
-    public function getDescription(): ?string
-    {
-        return $this->description;
-    }
-
-    public function setDescription(?string $description): self
-    {
-        $this->description = $description;
-
-        return $this;
-    }
-
     public function getGenre(): ?string
     {
         return $this->genre;
@@ -144,18 +127,6 @@ class Character
     public function setGenre(string $genre): self
     {
         $this->genre = $genre;
-
-        return $this;
-    }
-
-    public function getDeath(): ?\DateTimeInterface
-    {
-        return $this->death;
-    }
-
-    public function setDeath(?\DateTimeInterface $death): self
-    {
-        $this->death = $death;
 
         return $this;
     }
@@ -180,6 +151,18 @@ class Character
     public function setHouse(?string $house): self
     {
         $this->house = $house;
+
+        return $this;
+    }
+
+    public function isAlive(): ?bool
+    {
+        return $this->alive;
+    }
+
+    public function setAlive(bool $alive): self
+    {
+        $this->alive = $alive;
 
         return $this;
     }

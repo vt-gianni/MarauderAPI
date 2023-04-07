@@ -1,17 +1,17 @@
 {% extends 'base.html.twig' %}
 
 {% block jumbotron %}
-    <h1 class="padding handwriting">Carte du Marauder</h1>
+    <h1 class="padding handwriting">Maraudeur's Map</h1>
 
-    <p>L'API REST sur l'univers de Harry Potter.</p>
-    <p class="mini mt-1">Je jure solennellement que mes intentions sont mauvaises.</p>
+    <p>The REST API on the Harry Potter universe.</p>
+    <p class="mini mt-1">I solemnly swear that I am up to no good.</p>
 
-    <div class="padding"><a href="{{ path('index_doc') }}">Voir la documentation</a></div>
+    <div class="padding"><a href="{{ path('index_doc') }}">See the documentation</a></div>
 {% endblock %}
 
 {% block body %}
     <h2 class="text-center padding">
-        Essayez-la maintenant !
+        Try it now !
     </h2>
 
     <div class="flex-row">
@@ -19,7 +19,7 @@
             https://marauderapi.fr/api/
         </div>
         <input type="text" name="action" class="no-border-left w-100" value="characters?firstName=Harry" id="route-input">
-        <button class="validation-btn radius-right" id="search-btn">Valider</button>
+        <button class="validation-btn radius-right" id="search-btn">Validate</button>
     </div>
 
     <div class="light-background radius padding mt-3 code-sample">
