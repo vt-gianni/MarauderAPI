@@ -14,35 +14,33 @@
     <img src="public/image/icon.png" alt="Logo" width="50">
   </a>
 
-<h3 align="center">Carte du Maraudeur</h3>
+<h3 align="center">Marauder's Map</h3>
 
  <a href="https://marauderapi.fr/documentation">Documentation</a>
 
   <p align="center">
-    Carte du Maraudeur est une API sur l'univers de Harry Potter.
+    Marauder's Map is an API on the Harry Potter universe.
     <br />
     <br />
-    <a href="https://marauderapi.fr">Démo</a>
+    <a href="https://marauderapi.fr">Demo</a>
     ·
-    <a href="https://github.com/vt-gianni/MarauderAPI/issues">Rapporter un bug</a>
+    <a href="https://github.com/vt-gianni/MarauderAPI/issues">Report a bug</a>
     ·
-    <a href="https://github.com/vt-gianni/MarauderAPI/issues">Demande de feature</a>
+    <a href="https://github.com/vt-gianni/MarauderAPI/issues">Contribute</a>
   </p>
 </div>
 
 <!-- ABOUT THE PROJECT -->
-## A propos
+## About
 
-Etant fan de Harry Potter et peinant à trouver une API complète, gratuite et en français, j'ai décidé de créer ma propre API.
-
-Les données disponibles sont les Personnages, les Sortilèges, les Créatures Magiques, ainsi que les Lieux retranscrits dans le monde de Harry Potter. (films et livres confondus)
+The data available are Characters ans Spells transcribed into the world of Harry Potter. (films and books combined)
 
 <!-- CONTACT -->
 ## Contact
 
 Gianni GIUDICE - [@GGianniDev](https://twitter.com/GGianniDev) - gg@vitalytech.com
 
-Lien du projet : [https://marauderapi.fr](https://marauderapi.fr)
+Project link : [https://marauderapi.fr](https://marauderapi.fr)
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
