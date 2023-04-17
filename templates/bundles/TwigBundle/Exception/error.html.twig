@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block jumbotron %}
+    <h1 class="padding handwriting">Carte du Marauder</h1>
+
+    <p>L'API REST sur l'univers de Harry Potter.</p>
+
+    <div class="padding"><a href="{{ path('index_doc') }}">Voir la documentation</a></div>
+{% endblock %}
+
+{% block body %}
+    <h1 class="text-center padding red">Erreur</h1>
+
+    <p class="text-center padding">Il y a eu une erreur lors du traitement, veuillez nous contacter.</p>
+{% endblock %}
+
+{% block footer_style %}style="position: fixed; bottom: 0; left: 0; width: 100vw;"{% endblock %}
