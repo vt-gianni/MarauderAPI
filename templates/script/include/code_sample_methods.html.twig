@@ -27,7 +27,7 @@
     }
 
     const getCode = async (route, sample) => {
-        const req = await fetch('https://127.0.0.1:8000/api/' + route)
+        const req = await fetch('https://marauderapi.fr/api/' + route)
         if (req.status === 200) {
             const resp = await req.json()
             sample.innerHTML = JSON.stringify(resp, null, 2)
