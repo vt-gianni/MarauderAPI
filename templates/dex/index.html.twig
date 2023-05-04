@@ -1,0 +1,22 @@
+{% extends 'dex/base.html.twig' %}
+
+{% block jumbotron %}
+    <h1 class="padding handwriting">PotterDex</h1>
+
+    <p>Because classification is not only for Pokémon.</p>
+{% endblock %}
+
+{% block body %}
+    <div class="characters">
+        {% for character in characters %}
+            <div class="character-item">
+                <div class="character-picture"><div style="background-image: url('{{ character.picture }}');"></div></div>
+                <div class="character-insight">
+                    <p class="character-name badge badge-{{ character.house }}">
+                        {{ character.firstName }} {{ character.lastName }}
+                    </p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
