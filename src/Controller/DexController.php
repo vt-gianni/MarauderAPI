@@ -26,7 +26,7 @@ class DexController extends AbstractController
     public function show(): Response
     {
         return $this->render('dex/index.html.twig', [
-            'characters' => $this->characterRepository->findBy([], ['id' => 'ASC'], 12)
+            'characters' => $this->characterRepository->findBy([], ['id' => 'ASC'], 20)
         ]);
     }
 }
