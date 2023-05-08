@@ -6,14 +6,13 @@
  */
 
 // any CSS you import will output into a single css file (app.css in this case)
-import './styles/dex.css';
 
 // start the Stimulus application
 import './bootstrap';
 
 let offset = 20;
 const charactersContainer = document.querySelector('.characters');
-const defaultBackground = 'https://www.serieously.com/app/uploads/2021/07/harry-potter-choixpeau-magique-poudlard.jpg';
+const defaultBackground = 'https://figurinepop.com/public/2018/11/hedwig1_2.jpg';
 
 const addHoverStyles = (element, styles) => {
     element.addEventListener('mouseover', () => {
@@ -37,7 +36,7 @@ document.getElementById('see-more').addEventListener('click', async () => {
         characterItem.id = `character-${character.id}`;
 
         const characterPicture = document.createElement('div');
-        characterPicture.classList.add('character-picture');
+        characterPicture.classList.add('character-picture', 'default-image');
         characterPicture.style.backgroundImage = `url('${character.picture ? character.picture : defaultBackground}')`;
         characterPicture.style.backgroundSize = 'cover';
         characterPicture.style.backgroundRepeat = 'no-repeat';
@@ -85,3 +84,5 @@ searchbar.addEventListener('input', () => {
         }
     });
 });
+
+import './styles/dex.css';
