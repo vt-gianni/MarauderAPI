@@ -11,7 +11,7 @@
 
     <div class="characters">
         {% for character in characters %}
-            <div class="character-item">
+            <div class="character-item" id="character-{{ character.id }}">
                 <div class="character-picture"><div style="background-image: url('{{ character.picture }}');"></div></div>
                 <div class="character-insight">
                     <p class="character-name badge badge-{% if character.house %}{{ character.house }}{% else %}None{% endif %}">
