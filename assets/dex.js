@@ -32,7 +32,7 @@ document.getElementById('see-more').addEventListener('click', async () => {
 
     characters.forEach(character => {
         const characterLink = document.createElement('a');
-        characterLink.href = `/dex/${character.id}`;
+        characterLink.href = `/dex/character/${character.id}`;
         characterLink.target = '_blank';
 
         const characterItem = document.createElement('div');
