@@ -8,6 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
 /**
  * @Route("/dex")
@@ -28,7 +29,7 @@ class DexController extends AbstractController
     public function show(): Response
     {
         return $this->render('dex/index.html.twig', [
-            'characters' => $this->characterRepository->findBy([], ['id' => 'ASC'], 20)
+            'characters' => $this->characterRepository->findBy([], ['id' => 'ASC'], 12)
         ]);
     }
 
@@ -39,7 +40,7 @@ class DexController extends AbstractController
      */
     public function loadMore(int $offset): JsonResponse
     {
-        $characters = $this->characterRepository->findBy([], null, 20, $offset);
+        $characters = $this->characterRepository->findBy([], null, 12, $offset);
 
         $response = [];
         foreach ($characters as $character) {
@@ -52,5 +53,17 @@ class DexController extends AbstractController
         }
 
         return new JsonResponse($response);
+    }
+
+    /**
+     * @Route("/character/{id}", name="dex_details")
+     * @param Character $character
+     * @return Response
+     */
+    public function details(Character $character): Response
+    {
+        return $this->render('dex/details.html.twig', [
+            'character' => $character
+        ]);
     }
 }

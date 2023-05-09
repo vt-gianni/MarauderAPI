@@ -10,7 +10,7 @@
 // start the Stimulus application
 import './bootstrap';
 
-let offset = 20;
+let offset = 12;
 const charactersContainer = document.querySelector('.characters');
 const defaultBackground = 'https://figurinepop.com/public/2018/11/hedwig1_2.jpg';
 
@@ -31,9 +31,13 @@ document.getElementById('see-more').addEventListener('click', async () => {
     const characters = await response.json();
 
     characters.forEach(character => {
+        console.log(character)
+        const characterLink = document.createElement('a');
+        characterLink.href = `/dex/${character.id}`;
+        characterLink.target = '_blank';
+
         const characterItem = document.createElement('div');
         characterItem.classList.add('character-item');
-        characterItem.id = `character-${character.id}`;
 
         const characterPicture = document.createElement('div');
         characterPicture.classList.add('character-picture', 'default-image');
@@ -52,7 +56,8 @@ document.getElementById('see-more').addEventListener('click', async () => {
         characterInsight.appendChild(characterName);
         characterItem.appendChild(characterPicture);
         characterItem.appendChild(characterInsight);
-        charactersContainer.appendChild(characterItem);
+        characterLink.appendChild(characterItem);
+        charactersContainer.appendChild(characterLink);
 
         const pictureDiv = document.createElement('div');
         pictureDiv.style.backgroundImage = `url('${character.picture ? character.picture : defaultBackground}')`;
@@ -65,7 +70,7 @@ document.getElementById('see-more').addEventListener('click', async () => {
         });
     });
 
-    offset += 20;
+    offset += 12;
 })
 
 const searchbar = document.getElementById('searchbar');

@@ -1,0 +1,31 @@
+{% extends 'dex/base.html.twig' %}
+
+{% block jumbotron %}
+    <h1 class="padding handwriting">PotterDex</h1>
+
+    <p>Because classification is not only for Pokémon.</p>
+{% endblock %}
+
+{% block body %}
+    <div class="character-details">
+        <div class="character-details-picture" style="background-image: url('{{ character.picture }}');"></div>
+        <div class="character-details-info">
+            <div class="badges">
+                <div class="badge badge-house handwriting badge-{% if character.house %}{{ character.house }}{% else %}None{% endif %}">{% if character.house %}{{ character.house }}{% else %}Unknown{% endif %}</div>
+                <div class="badge badge-white"><i class="fas fa-address-card"></i> {{ character.firstName }} {{ character.lastName }}</div>
+                <div class="badge badge-white">
+                    <i class="fas fa-birthday-cake"></i> {{ character.birthdate|date('M') }} {{ character.birthdate|date('d') }}, {{ character.birthdate|date('Y') }}
+                </div>
+                <div class="badge badge-white">
+                    {% if character.genre == 'male' %}<i class="fas fa-mars"></i>{% else %}<i class="fas fa-venus"></i>{% endif %} {% if character.genre == 'male' %}Male{% else %}Female{% endif %}
+                </div>
+                <div class="badge badge-white">
+                    <i class="fas fa-tint"></i> {% if character.blood %}{{ character.blood|replace({'-': ' '})|capitalize }}{% else %}Unknown{% endif %}
+                </div>
+                <div class="badge badge-white">
+                    <i class="fas fa-dove"></i> {% if character.alive %}Alive{% else %}Dead{% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

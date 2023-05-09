@@ -139,6 +139,60 @@ button#see-more:hover {
     filter: brightness(0.5);
 }
 
+.character-details {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-gap: 15px;
+    background-color: #E2E9E9;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.character-details-picture {
+    width: 300px;
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    background-color: #333333;
+}
+
+.character-details-info {
+    width: 100%;
+}
+
+.character-details-info .handwriting {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.badge-house {
+    font-size: 1.2em;
+    padding: 15px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+.badge-white {
+    font-size: 1em;
+    background-color: white;
+    padding: 15px;
+    color: #576F72;
+    border-radius: 0;
+}
+
+.badge-white .fas {
+    margin-right: 10px;
+}
+
+.badges {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 @media (max-width: 1250px) {
     .characters {
         display: grid;
@@ -152,5 +206,29 @@ button#see-more:hover {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 15px;
+    }
+
+    .character-details {
+        display: grid;
+        grid-template-columns: 200px 1fr;
+    }
+
+    .character-details-picture {
+        width: 200px;
+    }
+}
+
+@media (max-width: 600px) {
+    .character-details {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .character-details-picture {
+        display: none;
+    }
+
+    .jumbotron h1 {
+        font-size: 2em;
     }
 }
