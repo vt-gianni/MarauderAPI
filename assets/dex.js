@@ -31,7 +31,6 @@ document.getElementById('see-more').addEventListener('click', async () => {
     const characters = await response.json();
 
     characters.forEach(character => {
-        console.log(character)
         const characterLink = document.createElement('a');
         characterLink.href = `/dex/${character.id}`;
         characterLink.target = '_blank';

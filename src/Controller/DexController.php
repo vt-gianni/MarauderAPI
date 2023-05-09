@@ -45,6 +45,7 @@ class DexController extends AbstractController
         $response = [];
         foreach ($characters as $character) {
             $response[] = [
+                'id' => $character->getId(),
                 'firstName' => $character->getFirstName(),
                 'lastName' => $character->getLastName(),
                 'house' => $character->getHouse(),
