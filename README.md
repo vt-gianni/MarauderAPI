@@ -35,6 +35,13 @@
 
 The data available are Characters ans Spells transcribed into the world of Harry Potter. (films and books combined)
 
+<!-- POTTERDEX -->
+## PotterDex
+
+A dex of Harry Potter characters has been added to give an example of using the API.
+
+You can access it here: [https://marauderapi.fr/dex](https://marauderapi.fr/dex)
+
 <!-- CONTACT -->
 ## Contact
 
